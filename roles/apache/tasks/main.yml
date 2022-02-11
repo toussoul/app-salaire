@@ -17,10 +17,8 @@
 
 - name: remove web dir contents
   file:
-    path: '/var/www/html/{{ item }}'
+    path: '/var/www/html/*'
     state: absent
-   with_fileglob:
-    - /var/www/html/*
 
 - name: Clone a repo with separate git directory
   git:
