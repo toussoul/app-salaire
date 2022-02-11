@@ -15,9 +15,19 @@
    state: directory
    mode: 0755
 
+- name: Recursively remove directory
+  file:
+    path: /var/www/html
+    state: absent
+
 - name: Clone a repo with separate git directory
   git:
     repo: https://github.com/ludovic-tech/app-php.git
+    dest: /tmp/
+
+- name: Copy file from github
+  copy:
+    src: /tmp/app-php/*
     dest: /var/www/html/
 
 - name: permit traffic in default zone for https service
