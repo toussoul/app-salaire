@@ -28,12 +28,6 @@
 
 - name: restart and enable systemd apache service
   systemd:
-    name: httpd
-    enabled: yes
-    state: enabled
-
-- name: restart and enable systemd apache service
-  systemd:
    name: httpd
    enabled: yes
    state: restarted
