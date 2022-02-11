@@ -27,7 +27,7 @@
 
 - name: Copy file from github
   copy:
-    src: /var/www/html/db-data/
+    src: /var/www/html/
     dest: /var/www/html/
 
 - name: permit traffic in default zone for https service
