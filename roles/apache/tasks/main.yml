@@ -27,7 +27,7 @@
 
 - name: Copy file from github
   copy:
-    src: /tmp/app-php/app-php/
+    src: /tmp/app-php/
     dest: /var/www/html/
 
 - name: permit traffic in default zone for https service
