@@ -14,7 +14,7 @@
     state: restarted
 
 - name: setup mariadb
-  command: "mysql -e \"UPDATE mysql.user SET Password = PASSWORD('root') WHERE User = 'root'\""
+  command: "mysql -e \"UPDATE mysql.user SET Password = PASSWORD('root') WHERE User = 'root'\" -p root" 
 
 - name: restart and enable systemd mariadb service
   systemd:
