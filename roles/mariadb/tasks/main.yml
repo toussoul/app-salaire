@@ -14,7 +14,7 @@
     state: restarted
 
 - name: setup mariadb
-  command: "mysql -p root -e \"UPDATE mysql.user SET Password = PASSWORD('root') WHERE User = 'root'\"" 
+  command: "mysql --user=root --password={{ default_root_password }} --connect-expired-password --execute=\"ALTER USER 'root'@'localhost' IDENTIFIED BY '{{ root_password }}'; grant all privileges on *.* to 'root'@'localhost' with grant option;\""
 
 - name: restart and enable systemd mariadb service
   systemd:
@@ -23,5 +23,3 @@
     state: restarted
 
 # tasks file for mariadb
-
-
