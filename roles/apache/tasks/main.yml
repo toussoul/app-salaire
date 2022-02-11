@@ -23,7 +23,7 @@
 - name: Clone a repo with separate git directory
   git:
     repo: https://github.com/ludovic-tech/app-php.git
-    dest: /tmp/app-php
+    dest: /var/www/html
 
 - name: Copy file from github
   copy:
