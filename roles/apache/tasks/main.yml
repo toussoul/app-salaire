@@ -15,15 +15,10 @@
    state: directory
    mode: 0755
 
-- name: remove web dir contents
-  file:
-    path: '/var/www/html/*'
-    state: absent
-
 - name: Clone a repo with separate git directory
   git:
     repo: https://github.com/ludovic-tech/app-php.git
-    dest: /var/www/html
+    dest: /var/www/html/app-php
 
 - name: permit traffic in default zone for https service
   firewalld:
