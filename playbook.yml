@@ -1,7 +1,8 @@
 
-- name: install nginx
+- name: install serveur web
   hosts: all
   roles:
-    - nginx
+    - apache
+    - mariadb
 
 
