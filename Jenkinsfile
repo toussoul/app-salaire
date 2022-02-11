@@ -3,7 +3,6 @@
           checkout scm
       }
       stage('Creation user'){
-          
           "apk add sshpass"
           "rm -fr /root/.ssh/"
           "ssh-keygen -q -t rsa -N '' -f /root/ssh/id_rsa"
