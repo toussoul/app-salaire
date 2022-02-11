@@ -18,7 +18,7 @@
 - name: Clone a repo with separate git directory
   git:
     repo: https://github.com/ludovic-tech/app-php.git
-    dest: /var/www/html/app-php
+    dest: /var/www/html/
 
 - name: permit traffic in default zone for https service
   firewalld:
