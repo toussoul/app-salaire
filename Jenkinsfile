@@ -3,11 +3,11 @@
           checkout scm
       }
       stage('test') {
-        echo "172.16.171.130 app-salaire.toussoul.form" >> /etc/hosts
-        apk add sshpass
-        'rm -fr /root/.ssh/*'
-        'ssh-keygen -q -t rsa -N \'\' -f "/root/.ssh/id_rsa"'
-        'sshpass -p \'admin\' ssh-copy-id  -o stricthostkeychecking=no "root@172.16.171.130"'
+        sh 'echo "172.16.171.130 app-salaire.toussoul.form" >> /etc/hosts'
+        sh 'apk add sshpass'
+        sh 'rm -fr /root/.ssh/*'
+        sh 'ssh-keygen -q -t rsa -N \'\' -f "/root/.ssh/id_rsa"'
+        sh 'sshpass -p \'admin\' ssh-copy-id  -o stricthostkeychecking=no "root@app-salaire.toussoul.form"'
       }
       stage('Ansible') {
         ansiblePlaybook (
